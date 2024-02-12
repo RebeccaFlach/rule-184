@@ -38,5 +38,5 @@ To interpret results we can measure the length of time the system takes to get s
 We are concerned about the feasibility of changing the number of cars in a currently running system. 
 
 ### Next Steps
-
-We plan to implement rule 184, the one dimensional version of the model to start. After that, we will start recreating the full model. 
+This week, we plan to implement rule 184, the one dimensional version of the model. We will both work on this separately to gain a better understanding of the model. 
+After that, we will plan and recreate the full model together, and then begin modifying it and exploring the results. 
