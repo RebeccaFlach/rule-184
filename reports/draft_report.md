@@ -12,21 +12,19 @@ The Biham-Middleton-Levine (BML) model is capable of simulating various states o
 
 ### Methodology
 
-We began by creating an implementation of the BML model that could change the grid size and starting density. This was achieved by populating the grid randomly, checking the probability against each cell. Each cell had an equal probability of being either red or blue. In our model, blue cells move horizontally to the right, while red cells move vertically downward. We followed the traffic model version of the BML, where all blue cells move simultaneously at each time step, followed by all the red cells. At each time step, a cell can move forward if the cell directly next to it is empty. In our model, the edges wrap around so that cells never exit the system. The model will continue iterating for a set number of time steps. 
+We start by creating an implementation of the BML model that can change the grid size and starting density. This is achieved by populating the grid randomly, checking the probability against each cell. Each cell has an equal probability of being either red or blue. In our model, blue cells move horizontally to the right, while red cells move vertically downward. We follow the traffic model version of the BML, where all blue cells move simultaneously at each time step, followed by all the red cells. At each time step, a cell can move forward if the cell directly next to it is empty. In our model, the edges wrap around so that cells never exit the system. The model continues iterating for a set number of time steps.
 
-To explore the time frame at which the model jams for different densities, we set up a variable to record the first time step when blue and red cells didn’t move. Then we ran the model five times for every density between zero and one at intervals of 0.01. We averaged the results of the five trials to approximate the stop time.
+To explore the time frame at which the model jams for different densities, we set up a variable to record the first time step when blue and red cells don’t move. Then we run the model five times for every density between zero and one at intervals of 0.01. We average the results of the five trials to approximate the stop time.
 
 #### Base BML Model and Results
-The following graphs are of a 250x250 sized grid. From testing various grid sizes from 10x10 to 250x250 we found that the size didn’t make a difference on the pattern, however the result is more defined the bigger the grid size. Though the larger the grid size the longer it took each density to reach its jamming point. Jamming starts around a density of .35 to .4, which matches the result found in Nagatani’s paper. As the density increases the time it takes jam decreases less from it’s neighbor and the distribution of the trials becomes smaller. As the graph had a long tailed distribution we also plotted our results on a log log scale, and got a somewhat linear line.
+The following graphs depict a 250x250 sized grid. When testing various grid sizes from 10x10 to 250x250, we find that the size does not affect the pattern significantly; however, the result becomes more defined as the grid size increases. The larger the grid size, the longer it takes for each density to reach its jamming point. Jamming begins around a density of .35 to .4, consistent with the findings in Nagatani’s paper. As the density increases, the time it takes to jam decreases less from its neighbor, and the distribution of the trials becomes smaller. As the graph exhibits a long-tailed distribution, we also plot our results on a log-log scale, yielding a somewhat linear line.
 
 ![](images/250_den_screen_shot.png) 
 ![](images/density.png.png)
 
 ### Extension EVERYTHING
 
-For an extension, we decided to add a "rush hour" element to the model, by dynamically changing the number of cars in the grid. 
-When the model reaches a given time step, a new car will be added on every free left and top edge square continuously for the length of the rush hour. After that time period ends, all cars have a 50% chance of being removed when they meet the right or bottom edge, until the density returns to the original density. 
-We ran this adapted model with a density of 0.1, a density at which the base model reaches speed one consistently. We then ran the model with a variety of rush hour lengths, and plotted the amount of time it took for the model to return to speed one. 
+For an extension, we are adding a "rush hour" element to the model by dynamically changing the number of cars in the grid. When the model reaches a given time step, a new car is added to every free left and top edge square continuously for the duration of rush hour. After that period ends, there is a 50% chance that cars will be removed when they reach the right or bottom edge, until the density returns to its original value. We are running this adapted model with a density of 0.1, at which the base model consistently reaches speed one. Then, we run the model with various rush hour lengths and plot the time it takes for the model to return to speed one.
 
 ![](images/extension.png)  
 
