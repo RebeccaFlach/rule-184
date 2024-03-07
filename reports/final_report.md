@@ -21,10 +21,12 @@ We start by creating an implementation of the BML model that can change the grid
 To explore the time frame at which the model jams for different densities, we set up a variable to record the first time step when blue and red cells do not move. When both blue and red cells cannot move, the model is fully jammed and nothing can move. Then we run the model five times for every density between zero and one at intervals of 0.01. We average the results of the five trials to approximate the stop time.
 
 ## Base BML Model and Results
-The following graphs depict a 250x250 sized grid. When testing various grid sizes from 10x10 to 250x250, we find that the size does not affect the pattern significantly; however, the result becomes more defined as the grid size increases. The larger the grid size, the longer it takes for each density to reach its jamming point. Jamming begins around a density of .35 to .4, consistent with the findings in Nagatani’s paper. As the density increases, the time it takes to jam decreases less from its neighbor, and the distribution of the trials becomes smaller. As the graph exhibits a long-tailed distribution, we also plot our results on a log-log scale, yielding a somewhat linear line.
+![](images/250_den_final.png)
+![](images/50_den_final.png)
+The following graphs depict a 250x250 and 50x50 sized grid. When testing various grid sizes from 10x10 to 250x250, we find that the size does not affect the pattern significantly; however, the result becomes more defined as the grid size increases. The larger the grid size, the longer it takes for each density to reach its jamming point. Jamming begins around a density of .35 to .4, consistent with the findings in Nagatani’s paper. We also noted that the larger grids would tend to have a lower critical density.As the density increases, the time it takes to jam decreases less from its neighbor, and the distribution of the trials becomes smaller. As the graph exhibits a long-tailed distribution, we also plot our results on a log-log scale, however, we decided the line wasn't linear enough for the graph to be a long tailed distribution.
 
-![](images/250_den_screen_shot.png) 
-![](images/density.png.png)
+![](images/crit_den_final.png)
+![](images/250_loglog.png)
 
 ## Extension EVERYTHING
 

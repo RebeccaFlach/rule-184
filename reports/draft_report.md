@@ -19,10 +19,12 @@ We start by creating an implementation of the BML model that can change the grid
 To explore the time frame at which the model jams for different densities, we set up a variable to record the first time step when blue and red cells don’t move. Then we run the model five times for every density between zero and one at intervals of 0.01. We average the results of the five trials to approximate the stop time.
 
 #### Base BML Model and Results
-The following graphs depict a 250x250 sized grid. When testing various grid sizes from 10x10 to 250x250, we find that the size does not affect the pattern significantly; however, the result becomes more defined as the grid size increases. The larger the grid size, the longer it takes for each density to reach its jamming point. Jamming begins around a density of .35 to .4, consistent with the findings in Nagatani’s paper. As the density increases, the time it takes to jam decreases less from its neighbor, and the distribution of the trials becomes smaller. As the graph exhibits a long-tailed distribution, we also plot our results on a log-log scale, yielding a somewhat linear line.
+![](images/250_den_final.png)
+![](images/50_den_final.png)
+The following graphs depict a 250x250 and 50x50 sized grid. When testing various grid sizes from 10x10 to 250x250, we find that the size does not affect the pattern significantly; however, the result becomes more defined as the grid size increases. The larger the grid size, the longer it takes for each density to reach its jamming point. Jamming begins around a density of .35 to .4, consistent with the findings in Nagatani’s paper. As the density increases, the time it takes to jam decreases less from its neighbor, and the distribution of the trials becomes smaller. As the graph exhibits a long-tailed distribution, we also plot our results on a log-log scale, yielding a somewhat linear line.
 
 ![](images/250_den_screen_shot.png) 
-![](images/density.png.png)
+![](images/density.png)
 
 ### Extension EVERYTHING
 
@@ -34,7 +36,8 @@ The relationship is linear! Jams slow things down :(
 
 ### Conclusion
 
-Traffic is bad for getting places 🙁
+We were able to replicate the BML model as well as the results found in Nagatani’s paper related to the critical density for traffic jams. Additionally we extended the experiment by simulating traffic jams. In both cases we found that the grid had a capacity and once that capacity would be reached, the grid would lock up. The system must be designed for the number of cars that will use it.
+
 
 ### Cause for Concern
 Getting more interesting results or interpreting our results better
