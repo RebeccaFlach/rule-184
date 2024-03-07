@@ -28,13 +28,22 @@ The following graphs depict a 250x250 and 50x50 sized grid. When testing various
 ![](images/crit_den_final.png)
 ![](images/250_loglog.png)
 
-## Extension EVERYTHING
+## Extension Methodology
 
 For an extension, we are adding a "rush hour" element to the model by dynamically changing the number of cars in the grid. When the model reaches a given time step, a new car is added to every free left and top edge square continuously for the duration of rush hour. After that period ends, there is a 50% chance that cars will be removed when they reach the right or bottom edge, until the density returns to its original value. We are running this adapted model with a density of 0.1, at which the base model consistently reaches speed one. Then, we run the model with various rush hour lengths and plot the time it takes for the model to return to speed one.
 
+## Extension Results
+
 ![](images/extension.png)  
 
-The relationship is linear! Jams slow things down :(
+We are plotting the increase in time to return to speed one verus the length of the rush hour, and we find a roughly linear relationship. 
+To investigate this further, we additionally plot how the measured density of the board increases during rush hour. Across all rush hours, the density increases ___ly. 
+
+plot density decrease after rush hour?
+
+We also plot the time to reach speed one across different densities, and find __
+
+
 
 ## Conclusion
 
