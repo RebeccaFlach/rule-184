@@ -26,29 +26,36 @@ The following graphs depict a 250x250 and 50x50 sized grid. When testing various
 ![](images/250_den_screen_shot.png) 
 ![](images/density.png)
 
-### Extension EVERYTHING
+### Extension Methodoloy
 
-For an extension, we are adding a "rush hour" element to the model by dynamically changing the number of cars in the grid. When the model reaches a given time step, a new car is added to every free left and top edge square continuously for the duration of rush hour. After that period ends, there is a 50% chance that cars will be removed when they reach the right or bottom edge, until the density returns to its original value. We are running this adapted model with a density of 0.1, at which the base model consistently reaches speed one. Then, we run the model with various rush hour lengths and plot the time it takes for the model to return to speed one.
+For an extension, we are adding a "rush hour" element to the model by dynamically changing the number of cars in the grid. When the model reaches a given time step, a new car is added to every free left and top edge square continuously for the duration of rush hour. After that period ends, there is a 50% chance that cars will be removed when they reach the right or bottom edge, until the density returns to its original value. We are running this model with a density of 0.1 and a grid size of 100 by 100. These are conditions in which the base model consistently reaches speed one. Then, we run the model with various rush hour lengths and plot the time it takes for the model to return to speed one.
 
-![](images/extension.png)  
 
-The relationship is linear! Jams slow things down :(
+## Extension Results
+
+First, we use the time to speed one testing mechanism to see how quickly the model self organizes in a free flowing state at different densities. 
+![alt text](image-4.png)
+
+The time it takes to achieve speed one increases faster than linearly as the density increases. This appears similar to the inverse of the time to jam plots. 
+
+With the rush hour mechanism added, we run the model again to see how that effects the outcomes.
+
+![alt text](image.png)
+During rush hour, the density increases nonlinearly, because as the density increases there's less room to add more cars. This might be a somewhat accurate modeling of real traffic dynamics, because roads have maximum capacities. However, in the real world cars that can't enter a road generally wait there until they can, instead of just dissapearing after a set time. This is a limitation of our methodology. 
+
+
+![alt text](image-5.png)
+
+As the length of rush hour increases, the time it take to return to speed one after rush hour also increases, with a roughly linear relationship. 
+ 
+
+We calculate that the average density by the time the grid achieves speed one is 0.14, which is quite close to the starting density of 0.1. This shows that the nonlinear relationship between density and time to speed one means that the density has to drop considerably from peak rush hour densities in order to be likely to achieve speed one. 
+
+
 
 ### Conclusion
 
-We were able to replicate the BML model as well as the results found in Nagatani’s paper related to the critical density for traffic jams. Additionally we extended the experiment by simulating traffic jams. In both cases we found that the grid had a capacity and once that capacity would be reached, the grid would lock up. The system must be designed for the number of cars that will use it.
-
-
-### Cause for Concern
-Getting more interesting results or interpreting our results better
-The computation time makes it hard to repeatedly run experiments
-We don’t have any big concerns since our code runs for experiment and extension
-
-### Next Steps
-
-Make pretty graphs
-Write everything up better
-Make speed one graphs
+We were able to replicate the BML model as well as the results found in Nagatani’s paper related to the critical density for traffic jams. Additionally we extended the experiment by simulating traffic jams. In both cases we found that the grid had a capacity and once that capacity would be reached, the grid would lock up. The system must be designed for the number of cars that will use it. 
 
 
 
